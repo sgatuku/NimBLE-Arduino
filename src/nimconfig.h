@@ -13,7 +13,7 @@
  **********************************************/
 
 /** @brief Un-comment to change the number of simultaneous connections (esp controller max is 9) */
-// #define CONFIG_BT_NIMBLE_MAX_CONNECTIONS 3
+#define CONFIG_BT_NIMBLE_MAX_CONNECTIONS 1
 
 /** @brief Un-comment to enable storing the timestamp when an attribute value is updated\n
  *  This allows for checking the last update time using getTimeStamp() or getValue(time_t*)\n
@@ -29,7 +29,7 @@
  *  Increasing this will reduce reallocations but increase memory footprint.\n
  *  Default value is 20. Range: 1 : 512 (BLE_ATT_ATTR_MAX_LEN)
  */
-// #define CONFIG_NIMBLE_CPP_ATT_VALUE_INIT_LENGTH 20
+#define CONFIG_NIMBLE_CPP_ATT_VALUE_INIT_LENGTH 512
 
 
 /****************************************************
@@ -58,7 +58,7 @@
 
 
 /** @brief Un-comment to change the default MTU size */
-// #define CONFIG_BT_NIMBLE_ATT_PREFERRED_MTU 255
+#define CONFIG_BT_NIMBLE_ATT_PREFERRED_MTU 517
 
 /** @brief Un-comment to change default device name */
 // #define CONFIG_BT_NIMBLE_SVC_GAP_DEVICE_NAME "nimble"
@@ -67,13 +67,13 @@
  *  Values: 0 = DEBUG, 1 = INFO, 2 = WARNING, 3 = ERROR, 4 = CRITICAL, 5+ = NONE\n
  *  Uses approx. 32kB of flash memory.
  */
- // #define CONFIG_BT_NIMBLE_LOG_LEVEL 5
+ #define CONFIG_BT_NIMBLE_LOG_LEVEL 4
 
  /** @brief Un-comment to set the debug log messages level from the NimBLE CPP Wrapper.\n
  *  Values: 0 = NONE, 1 = ERROR, 2 = WARNING, 3 = INFO, 4+ = DEBUG\n
  *  Uses approx. 32kB of flash memory.
  */
- // #define CONFIG_NIMBLE_CPP_LOG_LEVEL 0
+ #define CONFIG_NIMBLE_CPP_LOG_LEVEL 1
 
 /** @brief Un-comment to enable the debug asserts in NimBLE CPP wrapper.*/
 // #define CONFIG_NIMBLE_CPP_DEBUG_ASSERT_ENABLED 1
@@ -131,22 +131,22 @@
  * responses MBUFs are allocated out of msys_1 pool. This may need to be increased if\n
  * you are sending large blocks of data with a low MTU. E.g: 512 bytes with 23 MTU will fail.
  */
-// #define CONFIG_BT_NIMBLE_MSYS1_BLOCK_COUNT 12
+#define CONFIG_BT_NIMBLE_MSYS1_BLOCK_COUNT 128
 
 /** @brief Un-comment to use external PSRAM for the NimBLE host */
-// #define CONFIG_BT_NIMBLE_MEM_ALLOC_MODE_EXTERNAL 1
+#define CONFIG_BT_NIMBLE_MEM_ALLOC_MODE_EXTERNAL 1
 
 /** @brief Un-comment to change the core NimBLE host runs on */
-// #define CONFIG_BT_NIMBLE_PINNED_TO_CORE 0
+#define CONFIG_BT_NIMBLE_PINNED_TO_CORE 0
 
 /** @brief Un-comment to change the stack size for the NimBLE host task */
-// #define CONFIG_BT_NIMBLE_HOST_TASK_STACK_SIZE 4096
+#define CONFIG_BT_NIMBLE_HOST_TASK_STACK_SIZE 8192
 
 /**
  * @brief Un-comment to use memory pools for stack operations
  * @details this will use slightly more RAM but may provide more stability.
  */
-// #define CONFIG_NIMBLE_STACK_USE_MEM_POOLS 1
+#define CONFIG_NIMBLE_STACK_USE_MEM_POOLS 1
 
 /**
  * @brief Un-comment to change the bit used to block tasks during BLE operations
@@ -241,10 +241,10 @@
 #define CONFIG_BT_NIMBLE_GAP_DEVICE_NAME_MAX_LEN 31
 
 /** @brief ACL Buffer count */
-#define CONFIG_BT_NIMBLE_ACL_BUF_COUNT 12
+#define CONFIG_BT_NIMBLE_ACL_BUF_COUNT 24
 
 /** @brief ACL Buffer size */
-#define CONFIG_BT_NIMBLE_TRANSPORT_ACL_SIZE 255
+#define CONFIG_BT_NIMBLE_TRANSPORT_ACL_SIZE 517
 
 /** @brief HCI Event Buffer size */
 #if CONFIG_BT_NIMBLE_EXT_ADV || CONFIG_BT_NIMBLE_ENABLE_PERIODIC_ADV
@@ -257,7 +257,7 @@
 #define CONFIG_BT_NIMBLE_HCI_EVT_HI_BUF_COUNT 30
 
 /** @brief Number of low priority HCI event buffers */
-#define CONFIG_BT_NIMBLE_HCI_EVT_LO_BUF_COUNT 8
+#define CONFIG_BT_NIMBLE_HCI_EVT_LO_BUF_COUNT 30
 
 /** @brief Maximum number of connection oriented channels */
 #define CONFIG_BT_NIMBLE_L2CAP_COC_MAX_NUM 0

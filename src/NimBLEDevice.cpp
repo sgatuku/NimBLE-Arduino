@@ -855,6 +855,9 @@ bool NimBLEDevice::init(const std::string& deviceName) {
         bt_cfg.normal_adv_size     = m_scanDuplicateSize;
         bt_cfg.scan_duplicate_type = m_scanFilterMode;
 #   endif
+        bt_cfg.controller_task_stack_size = 8192;
+        bt_cfg.controller_task_prio = 23;
+        NIMBLE_LOGE(LOG_TAG, "Set our custom controller settings");
         err = esp_bt_controller_init(&bt_cfg);
         if (err != ESP_OK) {
             NIMBLE_LOGE(LOG_TAG, "esp_bt_controller_init() failed; err=%d", err);
